@@ -113,6 +113,22 @@
 <button onclick="document.getElementById('music').play()">
   ▶ Kliknij tutaj
 </button>
+  <audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">▶ Włącz muzykę</button>
+
+<script>
+  const btn = document.getElementById("musicBtn");
+  const music = document.getElementById("bgMusic");
+
+  btn.addEventListener("click", () => {
+    music.play();
+    btn.style.display = "none";
+  });
+</script>
+
 
 <div class="box" id="questionBox">
   <h2>💖 Ważny dzień w naszym życiu 💖</h2>
