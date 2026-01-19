@@ -146,6 +146,7 @@
 <script>
   function checkAnswer() {
     const answer = document.getElementById("answer").value;
+
     if (answer === "1711") {
       alert("Uwaga! Treści, które zobaczysz, mogą spowodować uśmiech na twarzy 💖");
 
@@ -153,6 +154,8 @@
       document.getElementById("contentBox").classList.remove("hidden");
 
       const music = document.getElementById("bgMusic");
+      music.muted = false;
+      music.volume = 1;
       music.play();
 
       startHearts();
@@ -161,6 +164,7 @@
     }
   }
 </script>
+
 
 
   function startHearts() {
