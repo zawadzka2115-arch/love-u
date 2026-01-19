@@ -105,30 +105,10 @@
   </style>
 </head>
 <body>
-
-<audio id="music" loop>
+  
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-<button onclick="document.getElementById('music').play()">
-  ▶ Kliknij tutaj
-</button>
-  <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<button id="musicBtn">▶ Włącz muzykę</button>
-
-<script>
-  const btn = document.getElementById("musicBtn");
-  const music = document.getElementById("bgMusic");
-
-  btn.addEventListener("click", () => {
-    music.play();
-    btn.style.display = "none";
-  });
-</script>
-
 
 <div class="box" id="questionBox">
   <h2>💖 Ważny dzień w naszym życiu 💖</h2>
@@ -168,14 +148,20 @@
     const answer = document.getElementById("answer").value;
     if (answer === "1711") {
       alert("Uwaga! Treści, które zobaczysz, mogą spowodować uśmiech na twarzy 💖");
+
       document.getElementById("questionBox").style.display = "none";
       document.getElementById("contentBox").classList.remove("hidden");
-      document.getElementById("music").play();
+
+      const music = document.getElementById("bgMusic");
+      music.play();
+
       startHearts();
     } else {
       alert("To nie ta odpowiedź… spróbuj jeszcze raz 💭");
     }
   }
+</script>
+
 
   function startHearts() {
     setInterval(() => {
